@@ -142,6 +142,42 @@ library MonopolyLibrary {
         uint256 biddingAmount;
     }
 
+    enum ChanceType {
+        Credit,
+        Debit,
+        PositionManipulation,
+        CreditAndPositionManipulation
+    }
+
+    struct Chance {
+        uint8 id;
+        string chance;
+        ChanceType chanceType;
+        uint8 changeInPosition;
+        uint8 newPosition;
+        uint256 balanceChange;
+    }
+
+    enum SpecialCard {
+        CHANCE,
+        COMMUNITY_CHEST,
+        GO_TO_JAIL,
+        JAIL,
+        SPECIAL_1,
+        SPECIAL_2,
+        SPECIAL_3,
+        SPECIAL_4,
+        SPECIAL_5,
+        SPECIAL_6,
+        SPECIAL_7,
+        SPECIAL_8,
+        SPECIAL_9,
+        SPECIAL_10,
+        SPECIAL_11,
+        SPECIAL_12,
+        SPECIAL_13
+    }
+
     event PropertySwapProposed(
         address indexed proposer,
         address indexed proposee,
